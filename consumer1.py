@@ -9,7 +9,7 @@ consumer = KafkaConsumer(
     enable_auto_commit=True,
     group_id='my-group',
     value_serializer=lambda x: loads(x.decode('utf-8')),
-    consumer_timeout_ms=1000
+    # consumer_timeout_ms=1000
 )
 
 # consumer list 가져오기

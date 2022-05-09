@@ -5,11 +5,11 @@ from json import loads
 consumer = KafkaConsumer(
     'test',
     bootstrap_servers=['localhost:9092'],
-    auto_offset_rest='earlist',
+    auto_offset_reset='earlist',
     enable_auto_commit=True,
     group_id='my-group',
-    value_serializer=lambda x: loads(x.decode('utf-8')),
-    # consumer_timeout_ms=1000
+    value_deserializer=lambda x: loads(x.decode('utf-8')),
+    consumer_timeout_ms=1000
 )
 
 # consumer list 가져오기

@@ -14,7 +14,8 @@ def get_partition(key, all, available):
 bootstrap_servers = ['localhost:9091','localhost:9092','localhost:9093']
 topicName='practice'
 
-producer = KafkaProducer(bootstrap_servers=bootstrap_servers,
+producer = KafkaProducer(acks=0,
+                         bootstrap_servers=bootstrap_servers,
                          value_serializer=json_serializer,
                          partitioner = 5)
 

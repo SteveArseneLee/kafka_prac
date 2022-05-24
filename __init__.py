@@ -8,8 +8,15 @@ import time
 def json_serializer(data):
     return json.dumps(data).encode("utf-8")
 
-producer = KafkaProducer(bootstrap_servers=['127.0.0.1:9091'],
-                         valur_serializer=json_serializer,)
+def get_partition(key, all, available):
+    return 0
+
+bootstrap_servers = ['localhost:9091','localhost:9092','localhost:9093']
+topicName='practice'
+
+producer = KafkaProducer(bootstrap_servers=bootstrap_servers,
+                         value_serializer=json_serializer,
+                         partitioner = 5)
 
 if __name__ == "__main__":
     """
@@ -24,7 +31,7 @@ if __name__ == "__main__":
                 print(result)
                 # 여기에 producer  연결하는 코드 작성
                 producer.send("rtc", result)
-                time.sleep(4)
+                time.sleep(2)
                 
 
     """

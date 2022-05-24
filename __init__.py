@@ -31,7 +31,7 @@ if __name__ == "__main__":
                     result.update({"year": year})
                 print(result)
                 # 여기에 producer  연결하는 코드 작성
-                producer.send("rtc", result)
+                producer.send(topicName, result)
                 time.sleep(2)
                 
 

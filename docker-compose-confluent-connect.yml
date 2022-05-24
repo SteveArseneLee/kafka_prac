@@ -135,11 +135,11 @@ services:
     hostname: localstack1
     image: localstack/localstack:latest
     environment:
-      AWS_DEFAULT_REGION: us-east-1
+      AWS_DEFAULT_REGION: us-east-2
       EDGE_PORT: 4566
       SERVICES: s3
-      AWS_ACCESS_KEY_ID: AKIAZJ5G7MQHNS4WNPY4
-      AWS_SECRET_ACCESS_KEY: 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
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
     ports:
       - 4566:4566
     volumes:

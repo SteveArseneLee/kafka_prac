@@ -16,8 +16,8 @@ topicName='practice'
 
 producer = KafkaProducer(acks=0,
                          bootstrap_servers=bootstrap_servers,
-                         value_serializer=json_serializer,
-                         partitioner=5)
+                         value_serializer=json_serializer
+                         )
 
 if __name__ == "__main__":
     """
